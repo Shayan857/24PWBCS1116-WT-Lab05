@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 10 - Media Query Demonstration Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 15px;
+    }
+    .indicator {
+      margin: 20px;
+      padding: 10px;
+      background: #eee;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .layout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background: #f4f4f4;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .layout p {
+      font-size: 18px;
+    }
+    @media (max-width: 480px) {
+      body {
+        background: #ffebee;
+      }
+      .indicator::after {
+        content: "Mobile (0px - 480px)";
+      }
+      .layout p {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      body {
+        background: #fff8e1;
+      }
+      .indicator::after {
+        content: "Tablet (481px - 768px)";
+      }
+      .layout p {
+        font-size: 16px;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      body {
+        background: #e8f5e9;
+      }
+      .indicator::after {
+        content: "Small Desktop (769px - 1024px)";
+      }
+      .layout p {
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 1025px) {
+      body {
+        background: #e3f2fd;
+      }
+      .indicator::after {
+        content: "Large Desktop (1025px and up)";
+      }
+      .layout p {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Task 10 - Media Query Demonstration</h1>
+  </header>
+  <div class="indicator"></div>
+  <div class="layout">
+    <p>Resize the window to see the layout and color changes for different breakpoints.</p>
+  </div>
+</body>
+</html>
