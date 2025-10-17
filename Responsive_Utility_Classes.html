@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 17 - Responsive Utility Classes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f5f5f5;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+    }
+    .box {
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Show/Hide Utilities */
+    .show-mobile { display: none; }
+    .show-tablet { display: none; }
+    .show-desktop { display: none; }
+
+    @media (max-width: 767px) {
+      .show-mobile { display: block; }
+      .hide-mobile { display: none; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .show-tablet { display: block; }
+      .hide-tablet { display: none; }
+    }
+    @media (min-width: 1024px) {
+      .show-desktop { display: block; }
+      .hide-desktop { display: none; }
+    }
+
+    /* Spacing Utilities */
+    .p-1 { padding: 10px; }
+    .p-2 { padding: 20px; }
+    .m-1 { margin: 10px; }
+    .m-2 { margin: 20px; }
+
+    /* Text Alignment per Breakpoint */
+    .text-center { text-align: center; }
+    @media (min-width: 768px) {
+      .text-md-left { text-align: left; }
+    }
+    @media (min-width: 1024px) {
+      .text-lg-right { text-align: right; }
+    }
+
+    /* Flexbox Utilities */
+    .d-flex { display: flex; }
+    .flex-column { flex-direction: column; }
+    .flex-row { flex-direction: row; }
+    .justify-center { justify-content: center; }
+    .align-center { align-items: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Task 17 - Responsive Utility Classes</h1>
+  </header>
+  <div class="container">
+    <div class="box show-mobile">Visible on Mobile Only</div>
+    <div class="box show-tablet">Visible on Tablet Only</div>
+    <div class="box show-desktop">Visible on Desktop Only</div>
+
+    <div class="box p-2 m-2 text-center text-md-left text-lg-right">
+      This box uses spacing and responsive text alignment utilities.
+    </div>
+
+    <div class="box d-flex flex-column flex-row justify-center align-center" style="height:150px;">
+      <p>Flexbox Utility Demo</p>
+    </div>
+  </div>
+</body>
+</html>
