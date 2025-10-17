@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 - Flexbox Navigation System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      background: #f1f1f1;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px;
+    }
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 30px;
+      background: #444;
+      padding: 10px;
+    }
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .dropdown-content {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">MySite</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Web Design</a>
+          <a href="#">Development</a>
+          <a href="#">SEO</a>
+        </div>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar">
+    <a href="#">Dashboard</a>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
