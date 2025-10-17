@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Display Property Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
+    .block-demo div {
+      display: block;
+      background: lightblue;
+      margin: 5px 0;
+      padding: 10px;
+    }
+    .inline-demo span {
+      display: inline;
+      background: lightgreen;
+      padding: 5px;
+      margin: 2px;
+    }
+    .inline-block-demo div {
+      display: inline-block;
+      width: 120px;
+      height: 80px;
+      background: orange;
+      margin: 5px;
+      text-align: center;
+      vertical-align: top;
+      line-height: 80px;
+      border-radius: 10px;
+    }
+    .table-demo {
+      display: table;
+      width: 100%;
+      border: 1px solid #333;
+    }
+    .table-row {
+      display: table-row;
+    }
+    .table-cell {
+      display: table-cell;
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+    .visibility-hidden {
+      visibility: hidden;
+      background: pink;
+      padding: 10px;
+    }
+    .display-none {
+      display: none;
+      background: pink;
+      padding: 10px;
+    }
+    @media (max-width: 768px) {
+      .inline-block-demo div {
+        display: block;
+        width: 100%;
+      }
+      .table-demo {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 1 - Display Property Showcase</h1>
+  <h2>Block Elements</h2>
+  <div class="block-demo">
+    <div>Div 1 (block)</div>
+    <div>Div 2 (block)</div>
+    <div>Div 3 (block)</div>
+  </div>
+  <h2>Inline Elements</h2>
+  <div class="inline-demo">
+    <span>Span 1 (inline)</span>
+    <span>Span 2 (inline)</span>
+    <span>Span 3 (inline)</span>
+  </div>
+  <h2>Inline-Block Elements</h2>
+  <div class="inline-block-demo">
+    <div>Box 1</div>
+    <div>Box 2</div>
+    <div>Box 3</div>
+  </div>
+  <h2>Table Layout (No table tag)</h2>
+  <div class="table-demo">
+    <div class="table-row">
+      <div class="table-cell">Row 1, Col 1</div>
+      <div class="table-cell">Row 1, Col 2</div>
+      <div class="table-cell">Row 1, Col 3</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Row 2, Col 1</div>
+      <div class="table-cell">Row 2, Col 2</div>
+      <div class="table-cell">Row 2, Col 3</div>
+    </div>
+  </div>
+  <h2>Hidden vs None</h2>
+  <div class="visibility-hidden">This is visibility: hidden (takes space)</div>
+  <div class="display-none">This is display: none (no space taken)</div>
+</body>
+</html>
